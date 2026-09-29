@@ -1,13 +1,13 @@
 cask "mantash" do
-  version "1.1.10"
+  version "1.1.11"
 
   on_arm do
-    sha256 "a0fc4858da8388a64806835e444cd1feca48eab8289e0b4ee2468d359228dd4c"
+    sha256 "3bc5163b41081b08d9cf5dd179b0d47a2230930c78d452f009f18b0634513730"
     url "https://github.com/realmx/MantaSH/releases/download/v#{version}/MantaSH-#{version}-macos-arm64.dmg"
   end
 
   on_intel do
-    sha256 "2359b1a1d430f56ef97b6b29be7b8063e2da5697b5058697cd2a8693594d2b75"
+    sha256 "f74c5527493c5527d48750e986b1a4fd0c836d371e20f1883d1404a6aad9c5e9"
     url "https://github.com/realmx/MantaSH/releases/download/v#{version}/MantaSH-#{version}-macos-x64.dmg"
   end
 
