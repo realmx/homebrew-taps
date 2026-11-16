@@ -1,16 +1,16 @@
 class Frpsync < Formula
   desc "Conservative bidirectional file synchronization for macOS and Linux"
   homepage "https://github.com/realmx/FrpSync-Releases"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/realmx/FrpSync-Releases/releases/download/v#{version}/frpsync_#{version}_darwin_arm64.tar.gz"
-      sha256 "d4a9eac36a2f15f6ac4ae7a47bb8193b7aec4f38248faf5b54cb68dd5341029a"
+      sha256 "7a0850a75dba40f27077b092308ec002dc2b126712c907b10eb4acfe44175d74"
     end
     on_intel do
       url "https://github.com/realmx/FrpSync-Releases/releases/download/v#{version}/frpsync_#{version}_darwin_amd64.tar.gz"
-      sha256 "3dd95b0a81d580d3f18d264b0a0309d3e41ca6e429fc5fd31de0de3fc5c558b6"
+      sha256 "cfa0ec148e0cfc67786520a21854919e185bb4d4003747f3502b97d099e8b2dc"
     end
   end
 
@@ -24,20 +24,19 @@ class Frpsync < Formula
 
   def caveats
     <<~EOS
-      Configure and initialize both peers before enabling the service.
-      Examples: #{opt_pkgshare}/examples
-      Preview: frpsync run --config ~/.config/frpsync/macos.yaml
-
-      brew services start frpsync enables synchronization writes (--apply).
-      The service reads ~/.config/frpsync/macos.yaml. Do not run it with sudo.
+      Start with frpsync or brew services start frpsync, then open http://127.0.0.1:18731
+      Configure and initialize both peers in the browser; no manual YAML is required.
+      New pairs start in preview. Enable synchronization explicitly in the browser;
+      your choice is saved and restored when the service restarts.
+      The service uses ~/.config/frpsync/macos.yaml. Do not run it with sudo.
       Before upgrading or uninstalling: brew services stop frpsync
       Configuration, synchronized files, and recovery state are preserved.
     EOS
   end
 
   service do
-    run [opt_bin/"frpsync", "run", "--config",
-         File.join(Dir.home, ".config/frpsync/macos.yaml"), "--apply"]
+    run [opt_bin/"frpsync", "start", "--config",
+         File.join(Dir.home, ".config/frpsync/macos.yaml")]
     keep_alive true
     working_dir Dir.home
     log_path var/"log/frpsync.log"
