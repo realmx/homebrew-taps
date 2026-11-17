@@ -1,24 +1,5 @@
 # realmx Homebrew tap
 
-## FrpSync
-
-```sh
-brew install realmx/taps/frpsync
-```
-
-If newer Homebrew reports an untrusted tap, run
-`brew trust --formula realmx/taps/frpsync` and retry. This trusts only FrpSync.
-
-FrpSync is a command-line formula for macOS arm64 and Intel. Configure and initialize
-both peers, run a preview, then use `brew services start frpsync` to enable real
-synchronization writes (`--apply`) at login. Do not run the user service with sudo.
-Before upgrading or removing it, run `brew services stop frpsync`, followed by
-`brew upgrade frpsync` or `brew uninstall frpsync`. Configuration, synchronized
-files and recovery state are preserved.
-
-See the [installation and service guide](https://github.com/realmx/FrpSync-Releases)
-for first-time setup, Linux installation, startup and removal.
-
 ## MantaSH
 
 Install MantaSH on macOS:
