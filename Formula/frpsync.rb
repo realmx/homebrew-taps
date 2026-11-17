@@ -1,16 +1,16 @@
 class Frpsync < Formula
   desc "Conservative bidirectional file synchronization for macOS and Linux"
   homepage "https://github.com/realmx/FrpSync"
-  version "0.9.0"
+  version "0.10.0"
 
   on_macos do
     on_arm do
       url "https://github.com/realmx/FrpSync/releases/download/v#{version}/frpsync_#{version}_darwin_arm64.tar.gz"
-      sha256 "5a18847d6a98ed771c68f0034c0efbc6a46725603eec2e59209f3825fe71125e"
+      sha256 "35ca1487548077f83753922ba614025537248ebd3cdd4c5a927f91de51f0aa95"
     end
     on_intel do
       url "https://github.com/realmx/FrpSync/releases/download/v#{version}/frpsync_#{version}_darwin_amd64.tar.gz"
-      sha256 "01d72cb04c26d076d473e99d1e29328d4dfad5045a007a2300119ba2dba0b376"
+      sha256 "4a0e7c9850c02f59ac7ef2d89a63afafc910845437f5bd330e7f5a4962d095db"
     end
   end
 
@@ -24,7 +24,7 @@ class Frpsync < Formula
 
   def caveats
     <<~EOS
-      Start with frpsync or brew services start frpsync, then open http://127.0.0.1:18731
+      Start with frpsync or brew services start frpsync, then open http://127.0.0.1:18730
       Configure and initialize both peers in the browser; no manual YAML is required.
       New pairs start in preview. Enable synchronization explicitly in the browser;
       your choice is saved and restored when the service restarts.
