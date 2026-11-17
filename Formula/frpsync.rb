@@ -1,16 +1,16 @@
 class Frpsync < Formula
   desc "Conservative bidirectional file synchronization for macOS and Linux"
   homepage "https://github.com/realmx/FrpSync"
-  version "0.11.0"
+  version "0.12.0"
 
   on_macos do
     on_arm do
       url "https://github.com/realmx/FrpSync/releases/download/v#{version}/frpsync_#{version}_darwin_arm64.tar.gz"
-      sha256 "0efc6a3099042a36397319d844f69298768b52488be22c8c4b70ab3d9b18f78b"
+      sha256 "c430137757b9404e61cbe73bd6b20042a61beccddbb5dde4098831e5e4901905"
     end
     on_intel do
       url "https://github.com/realmx/FrpSync/releases/download/v#{version}/frpsync_#{version}_darwin_amd64.tar.gz"
-      sha256 "a8ca3de84ed14732aadad90a0ff303e878b1d60f979fe930ab5c5cda6fe88be9"
+      sha256 "bb44b93290cc31310905303c09142c8191d019a3b85d77640987d848b29ffa79"
     end
   end
 
